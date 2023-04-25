@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Downloading a PDF</title>
+<script type="text/javascript" >
+	function generatePDF(){
+		var element = document.getElementById("content");
+		var val = {
+			margin: 1,
+			filename: 'download.pdf',
+			image: {type: 'jpg', quality:1},
+			html2canvas: {scale: 1},
+			jsPDF: {unit:'in', format: 'letter', orientation: 'portrait', precision: '12'}
+		};
+		html2pdf(element, val);
+		
+		}
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+<div id = 'content'>
+<h3>Paragraph</h3>
+<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Id velit ut tortor pretium viverra suspendisse. Metus aliquam eleifend mi in nulla posuere sollicitudin aliquam. Amet risus nullam eget felis eget nunc lobortis. Tellus rutrum tellus pellentesque eu tincidunt tortor. Platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper. Cursus turpis massa tincidunt dui ut ornare lectus sit amet. Laoreet suspendisse interdum consectetur libero id. Aliquet porttitor lacus luctus accumsan tortor posuere ac ut. Adipiscing vitae proin sagittis nisl rhoncus. Lorem sed risus ultricies tristique nulla aliquet enim tortor at.</br>
+Nec ullamcorper sit amet risus nullam eget felis eget nunc. Suspendisse sed nisi lacus sed viverra tellus in hac habitasse. Lacus luctus accumsan tortor posuere. Ac turpis egestas sed tempus urna et pharetra. Volutpat odio facilisis mauris sit amet massa vitae tortor. Et netus et malesuada fames ac turpis egestas sed. Arcu dictum varius duis at consectetur lorem donec. Elit eget gravida cum sociis natoque penatibus et magnis dis. Id donec ultrices tincidunt arcu. Sed arcu non odio euismod. Phasellus faucibus scelerisque eleifend donec pretium vulputate sapien nec sagittis. Egestas pretium aenean pharetra magna ac placerat vestibulum. Diam sit amet nisl suscipit adipiscing bibendum est ultricies integer. Nulla at volutpat diam ut.</p>
+</div>
+<button type="button" onclick="generatePDF()"> Generate PDF </button>
+</body>
+</html>
